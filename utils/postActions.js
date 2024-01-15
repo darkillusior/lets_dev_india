@@ -4,11 +4,11 @@ import catchErrors from "./catchErrors";
 import cookie from "js-cookie";
 import { toast } from "react-toastify";
 export const Axios = axios.create({
-  baseURL: `${baseUrl}/api/task`,
+  baseURL: `${baseUrl}/api/task/task`,
   headers: { Authorization: cookie.get("token") }
 });
 export const Axios2 = axios.create({
-  baseURL: `${baseUrl}/api/newtask`,
+  baseURL: `${baseUrl}/api/newtask/newtask`,
   headers: { Authorization: cookie.get("token") }
 });
 

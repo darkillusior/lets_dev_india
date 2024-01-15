@@ -29,7 +29,6 @@ function Form({  task, status, index, time, postTask, user, setPosts }) {
         return toast.error("Error Uploading Image");
       }
     }
-    console.log(picUrl);
     try {
       if (postTask) {
         let { data } = await submitNewPost(

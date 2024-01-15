@@ -79,7 +79,7 @@ export default withAuthorization(async function handler(req, res) {
          const { userId } = req;
          let { getFollowingData } = req.query;
          const user = await TaskModel.find({ user: userId });
-     
+         console.log(user ,"user ha ye")
          if (!user) {
            return res.status(404).send("no data found");
          }
@@ -87,17 +87,17 @@ export default withAuthorization(async function handler(req, res) {
          if (getFollowingData === "mapping") {
            post = user.filter(
              (status) =>
-               status.status === "completed" && status.task === "mapping"
+               status.status === "complete" && status.task === "mapping"
            );
          } else if (getFollowingData === "cleaning") {
            post = user.filter((status) => status.task === "cleaning");
          } else if (getFollowingData === "planting") {
            post = user.filter(
              (status) =>
-               status.status === "completed" && status.task === "planting"
+               status.status === "complete" && status.task === "planting"
            );
          }
-  console.log("post",post)
+     console.log(post,"post ha ye")
          return res.json(post);
        } catch (error) {
          console.error(error);

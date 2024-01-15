@@ -18,7 +18,6 @@ import Footer from "@/components/Footer";
 export default function Post({postsData,user}) {
 
   const [posts, setPosts] = useState(postsData||[]);
-
   const [hasMore, setHasMore] = useState(true);
   const [pageNumber, setPageNumber] = useState(2);
 
@@ -73,7 +72,7 @@ export const getServerSideProps = async ctx => {
   try {
    
     const { token } = parseCookies(ctx);
-    const res = await axios.get(`${baseUrl}/api/newtask/post`, {
+    const res = await axios.get(`${baseUrl}/api/task/post`, {
       headers: { Authorization: token },
       params: { pageNumber: 1 }
       
