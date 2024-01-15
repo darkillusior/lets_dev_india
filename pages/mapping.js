@@ -10,7 +10,9 @@ import Slider from '@/components/Slider';
 import { HiChevronRight } from "react-icons/hi";
 import { HiChevronLeft } from "react-icons/hi";
 function Mapping({user,postsData}) {
+  
   const[post,setPost]=useState(postsData||[])
+ 
   const[img,setImg]=useState(2)
 const[slideIndex,setSlideIndex]=useState(2)
   const handleNextSlide = () => {
@@ -26,7 +28,7 @@ const[slideIndex,setSlideIndex]=useState(2)
   };
 let arr= [post[img]?.a,post[img]?.b,post[img]?.c,post[img]?.d,post[img]?.e,post[img]?.f,post[img]?.g,post[img]?.h,post[img]?.i];
 
-  const slides = [<Card />, <Card />, <Card />, <Card />, <Card />, <Card />, <Card />, <Card />, <Card />, <Card />]
+  // const slides = [<Card />, <Card />, <Card />, <Card />, <Card />, <Card />, <Card />, <Card />, <Card />, <Card />]
 
   return (
    <>
@@ -154,13 +156,12 @@ export const getServerSideProps = async ctx => {
     const { token } = parseCookies(ctx);
     const { name } = ctx.query;
     const getFollowingData =name;
-console.log(name,"lolpolo")
-    const res = await axios.get(`${baseUrl}/api/task`, {
+    const res = await axios.get(`${baseUrl}/api/task/task`, {
       headers: { Authorization: token },
       params: { getFollowingData }
       
     });
-
+     
     return { props: { postsData: res.data } };
   } catch (error) {
     return { props: { errorLoading: true } };

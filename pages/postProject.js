@@ -73,7 +73,7 @@ export const getServerSideProps = async ctx => {
   try {
    
     const { token } = parseCookies(ctx);
-    const res = await axios.get(`${baseUrl}/api/newtask/project`, {
+    const res = await axios.get(`${baseUrl}/api/newtask/post`, {
       headers: { Authorization: token },
       params: { pageNumber: 1 }
       

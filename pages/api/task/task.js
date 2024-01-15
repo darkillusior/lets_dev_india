@@ -75,10 +75,11 @@ export default withAuthorization(async function handler(req, res) {
  }
   } else if (req.method === "GET") {
        try {
+     
          const { userId } = req;
          let { getFollowingData } = req.query;
          const user = await TaskModel.find({ user: userId });
-
+     
          if (!user) {
            return res.status(404).send("no data found");
          }
@@ -96,7 +97,7 @@ export default withAuthorization(async function handler(req, res) {
                status.status === "completed" && status.task === "planting"
            );
          }
-
+  console.log("post",post)
          return res.json(post);
        } catch (error) {
          console.error(error);

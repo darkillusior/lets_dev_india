@@ -1,12 +1,11 @@
 import withAuthorization from "@/middleware/authMiddleware";
 import connectDB from "@/utilsServer/connectDb";
-import NewtaskModel from "@/models/NewtaskModel";
+import TaskModel from "@/models/TaskModel";
 export default withAuthorization(async function handler(req, res) {
   // Get All Post
   if (req.method === "GET") {
     connectDB();
    const { pageNumber } = req.query;
-   const { type } = req.params;
    try {
      const number = Number(pageNumber);
      const size = 8;
@@ -14,7 +13,7 @@ export default withAuthorization(async function handler(req, res) {
      let posts = [];
 
      if (number === 1) {
-       posts = await NewtaskModel.find({ task: type })
+       posts = await TaskModel.find()
          .limit(size)
          .sort({ createdAt: -1 });
      }
@@ -23,7 +22,7 @@ export default withAuthorization(async function handler(req, res) {
      else {
        const skips = size * (number - 1);
 
-       posts = await NewtaskModel.find({ task: type })
+       posts = await TaskModel.find()
          .skip(skips)
          .limit(size)
          .sort({ createdAt: -1 });

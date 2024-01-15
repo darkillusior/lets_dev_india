@@ -44,7 +44,6 @@ export default function Post({postsData,user}) {
      <div className="pb-12">
      <Navbar user = {user} />
      </div>
-       <Form postTask={postTask} user={user} setPosts={setPosts} task={"task"}/>
     <div className="grid md:grid-cols-2 grid-cols-1 px-2 pt-10 w-full justify-center items-center  ">
 
               
@@ -74,7 +73,7 @@ export const getServerSideProps = async ctx => {
   try {
    
     const { token } = parseCookies(ctx);
-    const res = await axios.get(`${baseUrl}/api/newtask/task`, {
+    const res = await axios.get(`${baseUrl}/api/newtask/post`, {
       headers: { Authorization: token },
       params: { pageNumber: 1 }
       
