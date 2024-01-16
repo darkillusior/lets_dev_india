@@ -7,7 +7,7 @@ import baseUrl from "../utils/baseUrl";
 import cookie from "js-cookie";
 import { parseCookies } from "nookies";
 
-// import InfiniteScroll from "react-infinite-scroll-component";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 import PostTask from "@/components/PostTask";
 import Form from "@/components/Form";
@@ -22,21 +22,21 @@ export default function Post({postsData,user}) {
   const [pageNumber, setPageNumber] = useState(2);
 
  let postTask =true
-//   const fetchDataOnScroll = async () => {
-//     try {
-//       const res = await axios.get(`${baseUrl}/api/task`, {
-//         headers: { Authorization: cookie.get("token") },
-//         params: { pageNumber }
-//       });
+  const fetchDataOnScroll = async () => {
+    try {
+      const res = await axios.get(`${baseUrl}/api/task/post`, {
+        headers: { Authorization: cookie.get("token") },
+        params: { pageNumber }
+      });
   
-//       if (res.data.length === 0) setHasMore(false);
+      if (res.data.length === 0) setHasMore(false);
 
-//       setPosts(prev => [...prev, ...res.data]);
-//       setPageNumber(prev => prev + 1);
-//     } catch (error) {
-//       alert("Error fetching Posts");
-//     }
-//   };
+      setPosts(prev => [...prev, ...res.data]);
+      setPageNumber(prev => prev + 1);
+    } catch (error) {
+      alert("Error fetching Posts");
+    }
+  };
   return (
     <div className="bg-gray-900"
     >
@@ -46,13 +46,13 @@ export default function Post({postsData,user}) {
     <div className="grid md:grid-cols-2 grid-cols-1 px-2 pt-10 w-full justify-center items-center  ">
 
               
-     {/* <InfiniteScroll
+     <InfiniteScroll
   
           hasMore={hasMore}
           next={fetchDataOnScroll}
-          loader={<PlaceHolderPosts />}
-          endMessage={<EndMessage />}
-          dataLength={posts.length}> */}
+          // loader={<PlaceHolderPosts />}
+          // endMessage={<EndMessage />}
+          dataLength={posts.length}>
    {posts?.map(post => (
     <div className="w-full px-5 py-5  ">
        <PostTask post={post} setPosts={ setPosts} user={user}/>
@@ -60,7 +60,7 @@ export default function Post({postsData,user}) {
 
             ))}
    
-{/* </InfiniteScroll> */}
+</InfiniteScroll>
 
   </div>
   <Footer />

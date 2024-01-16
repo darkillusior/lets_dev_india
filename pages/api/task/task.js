@@ -11,7 +11,7 @@ export default withAuthorization(async function handler(req, res) {
    if (img.length > 10) {
      return res.status(401).send(" input less images");
    }
-   console.log("time", time, "time2", Date.now());
+  //  console.log("time", time, "time2", Date.now());
    let user;
 
    user = await TaskModel.find({ user: userId });

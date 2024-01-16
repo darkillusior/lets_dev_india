@@ -1,43 +1,48 @@
-import  { useState} from "react";
+import  { useEffect, useState} from "react";
 
 import axios from "axios";
 import baseUrl from "../utils/baseUrl";
 
-import cookie from "js-cookie";
-import { parseCookies } from "nookies";
 
-// import InfiniteScroll from "react-infinite-scroll-component";
 
-import PostTask from "@/components/PostTask";
+import InfiniteScroll from "react-infinite-scroll-component";
 import Form from "@/components/Form";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import PostCard from "@/components/PostCard";
 
 
-export default function Post({postsData,user}) {
+
+export default function PostNewtask({postsData,user}) {
 
   const [posts, setPosts] = useState(postsData||[]);
 
   const [hasMore, setHasMore] = useState(true);
   const [pageNumber, setPageNumber] = useState(2);
+useEffect(() => {
+  if(posts.length<0){
+    setHasMore(false);
+  }
+
+  return () => {
+   
+  }
+}, [posts])
 
  let postTask =true
-//   const fetchDataOnScroll = async () => {
-//     try {
-//       const res = await axios.get(`${baseUrl}/api/task`, {
-//         headers: { Authorization: cookie.get("token") },
-//         params: { pageNumber }
-//       });
-  
-//       if (res.data.length === 0) setHasMore(false);
+  const fetchDataOnScroll = async () => {
+    try {
+      const res = await axios.get(`${baseUrl}/api/newtask/allnewtask`, {
+        params: { pageNumber }
+      });
+  // console.log(res.data)
+      if (res.data.length === 0) setHasMore(false);
 
-//       setPosts(prev => [...prev, ...res.data]);
-//       setPageNumber(prev => prev + 1);
-//     } catch (error) {
-//       alert("Error fetching Posts");
-//     }
-//   };
+      setPosts(prev => [...prev, ...res.data]);
+      setPageNumber(prev => prev + 1);
+    } catch (error) {
+      alert("Error fetching Posts");
+    }
+  };
   return (
     <div className="bg-gray-900"
     >
@@ -48,21 +53,21 @@ export default function Post({postsData,user}) {
     <div className="grid md:grid-cols-2 grid-cols-1 px-2 py-10 w-full justify-center items-center  ">
 
               
-     {/* <InfiniteScroll
-  
+     <InfiniteScroll
           hasMore={hasMore}
           next={fetchDataOnScroll}
-          loader={<PlaceHolderPosts />}
-          endMessage={<EndMessage />}
-          dataLength={posts.length}> */}
+          // loader={<PlaceHolderPosts />}
+          // endMessage={<EndMessage />}
+          dataLength={posts?.length}>
    {posts?.map(post => (
     <div className="w-full px-5 py-5  ">
        <PostCard post={post} setPosts={ setPosts}  user={user}/>
+       {console.log("error")}
       </div>  
 
             ))}
    
-{/* </InfiniteScroll> */}
+</InfiniteScroll>
 
   </div>
   <Footer />
@@ -73,9 +78,7 @@ export default function Post({postsData,user}) {
 export const getServerSideProps = async ctx => {
   try {
    
-    const { token } = parseCookies(ctx);
-    const res = await axios.get(`${baseUrl}/api/newtask/post`, {
-      headers: { Authorization: token },
+    const res = await axios.get(`${baseUrl}/api/newtask/allnewtask`, {
       params: { pageNumber: 1 }
       
     });

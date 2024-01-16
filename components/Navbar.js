@@ -103,7 +103,7 @@ function Navbar({ user }) {
                   </li>
                   <li>
                     <Link
-                      href="/postProject"
+                      href="/postNewtask"
                       className="block md:px-4 transition "
                     >
                       <div className="hover-content">
