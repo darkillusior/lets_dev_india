@@ -2,8 +2,8 @@ import React from 'react'
 import CardSlider from './CardSlider'
 
 function PostCard({post}) {
- 
-    let img=[post.a,post.b,post.c,post.d,post.e,post.f,post.g,post.h,post.i  ]
+ console.log(post,"post")
+
   return (
    
         
@@ -53,15 +53,30 @@ function PostCard({post}) {
           {/* </Link> */}
          
         </div>
-        <div className=" flex flex-wrap py-2  text-blue-400  break-normal justify-center font-extrabold  items-center ">
-          <p className="break-all">{`Task`}</p>
+        <div className={` flex flex-wrap py-2 text-gray-200   break-normal justify-center font-extrabold  items-center `}>
+          <p className="break-all font-bold text-xl ">{post.taskname}</p>
         </div>
         
       </div>
     </div>
-        <main className='w-full'>
-         
-        <CardSlider img={img}/>
+        <main className='w-full max-h-[30rem] overflow-auto  scroll-m-1 '>
+           
+           {/* <Gallery  post={post} img={0}/> */}
+           <div className="cursor-pointer gap-2 w-full flex sm:grid overflow-x-scroll grid-cols-2 md:grid-cols-3 p-2 bg-slate-800 rounded-lg m-auto">
+              {post?.picUrl?.map((img, index) => (
+                <img
+                  className="w-11/12  sm:w-full  rounded-3xl"
+                  key={index}
+                  src={img}
+                  alt="PostImage"
+                  centered
+                  size="medium"
+                />
+              ))}
+            </div>
+            <pre  className="p-5 break-all text-gray-200 whitespace-pre-wrap bg-gray-700 bg-opacity-50 rounded-lg">
+          {post?.text}
+            </pre>
         </main>
         </div> 
 

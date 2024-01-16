@@ -12,6 +12,7 @@ import PostTask from "@/components/PostTask";
 import Form from "@/components/Form";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import PostCard from "@/components/PostCard";
 
 
 export default function Post({postsData,user}) {
@@ -56,7 +57,7 @@ export default function Post({postsData,user}) {
           dataLength={posts.length}> */}
    {posts?.map(post => (
     <div className="w-full px-5 py-5  ">
-       <PostTask post={post} setPosts={ setPosts}  user={user}/>
+       <PostCard post={post} setPosts={ setPosts}  user={user}/>
       </div>  
 
             ))}

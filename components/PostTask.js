@@ -76,7 +76,7 @@ function PostTask({post,user,setPosts}) {
          
         </div>
         <div className={` flex flex-wrap py-2 text-gray-200   break-normal justify-center font-extrabold  items-center `}>
-          <p className="break-all font-bold text-xl ">Taks Completed</p>
+          <p className="break-all font-bold text-xl ">{post.task}</p>
         </div>
         
       </div>

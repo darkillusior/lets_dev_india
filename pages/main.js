@@ -133,24 +133,24 @@ let tasklist=list==="task"?task:project;
               </div>
         )}
 
-        <div className='flex justify-end p-5'>
+        {/* <div className='flex justify-end p-5'>
           <div className="relative p-5 cursor-pointer   px-6 py-3 font-bold text-white rounded-lg group" onClick={()=>{setShowForm(true)}}>
             <span className="absolute inset-0 w-full h-full transition duration-300 transform -translate-x-1 -translate-y-1 bg-purple-800 ease opacity-80 group-hover:translate-x-0 group-hover:translate-y-0"></span>
             <span className="absolute inset-0 w-full h-full transition duration-300 transform translate-x-1 translate-y-1 bg-pink-800 ease opacity-80 group-hover:translate-x-0 group-hover:translate-y-0 mix-blend-screen"></span>
             <span className="relative">Contribute Task</span>
           </div>
-        </div>
+        </div> */}
      
  
       </div>
       </div>
-      <div onClick={()=>{setShowDonation(true)}} className="fixed top-1/2 right-0 transform -translate-y-1/2 w-24 h-16 bg-gradient-to-r from-red-500 to-pink-500 rounded-l-lg flex items-center justify-center text-white font-semibold text-sm shadow-lg cursor-pointer group transition-all ease-in-out hover:w-36">
+      {/* <div onClick={()=>{setShowDonation(true)}} className="fixed top-1/2 right-0 transform -translate-y-1/2 w-24 h-16 bg-gradient-to-r from-red-500 to-pink-500 rounded-l-lg flex items-center justify-center text-white font-semibold text-sm shadow-lg cursor-pointer group transition-all ease-in-out hover:w-36">
         <div className="w-0 h-0 border-r-12 border-t-12 border-transparent border-solid border-yellow-100 transform rotate-45 -mr-1"></div>
         <span className="ml-3  ">Donate for a Cause</span>
         <span className="group-hover:block hidden text-xs p-2">Become a Contributor</span>
       </div>
 
- 
+  */}
 
 
     </>
