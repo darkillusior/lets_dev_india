@@ -22,7 +22,7 @@ function FutureGoles() {
                    
                     <div className="space-y-5 py-4 xl:col-span-3">
                       <div className="space-y-6">
-                          <div className="flex flex-wrap">
+                          <div className="flex text-xl flex-wrap">
                           1.  Machile Learning Model
                           </div>
                         </div>
@@ -32,7 +32,7 @@ function FutureGoles() {
                       </div>
                       <div className="space-y-5 py-4 xl:col-span-3">
                       <div className="space-y-6">
-                          <div className="flex flex-wrap">
+                          <div className="flex text-xl flex-wrap">
                            2. Add Map
                           </div>
                         </div>
@@ -42,7 +42,7 @@ function FutureGoles() {
                       </div>
                       <div className="space-y-5 py-4 xl:col-span-3">
                       <div className="space-y-6">
-                          <div className="flex flex-wrap">
+                          <div className="flex text-xl flex-wrap">
                            3. Add Shop
                           </div>
                         </div>
@@ -52,7 +52,7 @@ function FutureGoles() {
                       </div>  
                       <div className="space-y-5 py-4 xl:col-span-3">
                       <div className="space-y-6">
-                          <div className="flex flex-wrap">
+                          <div className="flex text-xl flex-wrap">
                            4.Credit System
                           </div>
                         </div>

@@ -39,11 +39,13 @@ const Hero = () => {
               </Link>
               <Link
                 href="/about"
-                className="animate-slide-in-left relative flex h-11 w-3/4 items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-1/4"
+                className="relative flex h-12 w-4/6 items-center justify-center px-8 before:absolute before:inset-0 before:rounded-full before:border before:border-transparent before:bg-primary/10 before:bg-gradient-to-b before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 sm:w-max"
               >
-                <span className="relative text-base font-semibold text-white">
-                  About
+              
+                <span className="relative text-base font-semibold text-primary dark:text-white">
+                  More about
                 </span>
+              
               </Link>
             </div>
             <div className="hidden py-8 mt-16 border-y border-gray-100 dark:border-gray-800 sm:flex justify-between">
