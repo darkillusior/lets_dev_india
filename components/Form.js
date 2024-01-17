@@ -100,7 +100,7 @@ function Form({  task, status, index, time, postTask, user, setPosts }) {
         className={`w-full  profile-page rounded-lg p-10 flex flex-col  ${task==="project"?"border border-yellow-300":"border border-gray-200"}  justify-center items-center   `}
         onSubmit={handelSubmit}
       >
-         <h1 className=" flex justify-center items-center w-full font-semibold text-lg">{task==="project"?"Project":"Task"}</h1>
+         <h1 className=" flex justify-center items-center w-full font-semibold text-lg">Add Task</h1>
         <h1 className=" flex w-full font-semibold text-lg">Images</h1>
 
         <input

@@ -37,6 +37,14 @@ const Hero = () => {
                   Get started
                 </span>
               </Link>
+              <Link
+                href="/about"
+                className="animate-slide-in-left relative flex h-11 w-3/4 items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-1/4"
+              >
+                <span className="relative text-base font-semibold text-white">
+                  About
+                </span>
+              </Link>
             </div>
             <div className="hidden py-8 mt-16 border-y border-gray-100 dark:border-gray-800 sm:flex justify-between">
               <div className="text-center">

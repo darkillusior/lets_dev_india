@@ -97,7 +97,7 @@ function Navbar({ user }) {
                           height={100}
                           alt="impact illustration"
                         />
-                        <span>Post Task</span>
+                        <span>Completed tasks</span>
                       </div>
                     </Link>
                   </li>
@@ -114,7 +114,7 @@ function Navbar({ user }) {
                           height={100}
                           alt="impact illustration"
                         />
-                        <span>Post Project</span>
+                        <span>Post tasks</span>
                       </div>
                     </Link>
                   </li>

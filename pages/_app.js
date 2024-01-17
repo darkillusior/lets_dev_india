@@ -25,6 +25,7 @@ MyApp.getInitialProps = async ({ Component, ctx }) => {
     ctx.pathname === "/donation"||
     ctx.pathname === "/main"||
     ctx.pathname === "/posttask"||
+    ctx.pathname === "/about"||
     ctx.pathname === "/postNewtask";
 
     !protectedRoutes && redirectUser(ctx, "/");

@@ -5,8 +5,8 @@ import Link from "next/link";
 const Features = () => {
   return (
     <div id="features">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-6 pt-40">
-        <div className="md:w-2/3 lg:w-1/2">
+      <div className="max-w-7xl flex flex-col items-center  mx-auto px-6 md:px-12 xl:px-6 pt-40">
+        <div className="md:w-2/3 lg:w-2/3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -20,10 +20,10 @@ const Features = () => {
             />
           </svg>
 
-          <h2 className="my-8 text-2xl font-bold text-gray-700 dark:text-white md:text-4xl">
+          <p className="my-8 text-2xl font-bold text-gray-700 dark:text-white md:text-4xl">
             A task based approach to develop India
-          </h2>
-          <p className="text-gray-600 dark:text-gray-300">
+          </p>
+          <p className="text-gray-600 w-full dark:text-gray-300">
             Tasks ahead: map your area, clean meticulously, grow plants, and
             implement sustainable practices. Nurture seeds to create a
             flourishing green haven. Set up irrigation, compost, and embrace
