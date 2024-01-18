@@ -15,7 +15,7 @@ const Hero = () => {
         <div className="relative pt-36 ml-auto">
           <div className="lg:w-2/3 text-center mx-auto">
             <h1 className="text-gray-900 dark:text-white font-bold text-5xl md:text-6xl xl:text-7xl animate-fade-in-out">
-              Join us to make the </br>
+              Join us to make the {""}
               <span className="text-primary dark:text-white">
                 India better place for all.
               </span>
